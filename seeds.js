@@ -103,43 +103,43 @@ async function tours() {
 tours();
 
 const culture = [
-  { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
-  { name: "Racer 57", propellers: 4, maxSpeed: 20 },
-  { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
+  {
+    name: "Cinema São Jorge",
+    location: "Av. da Liberdade 175, 1250-144 Lisboa",
+    accessibility: "Accessible",
+    description: "The cinema has an access ramp to the main entrance.",
+    website: "https://cinemasaojorge.pt/",
+  },
 ];
-
 async function culture() {
   try {
     await mongoose.connect(MONGO_URI);
-
     let dbculture = await Places.create(culture);
     // console.log(`Created ${dbDrones.length} drones on the DB`)
-
     mongoose.connection.close();
   } catch (error) {
     console.log(error);
   }
 }
-
 culture();
-
 const concerts = [
-  { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
-  { name: "Racer 57", propellers: 4, maxSpeed: 20 },
-  { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
+  {
+    name: "Festival Nos Alive",
+    location: "Passeio Marítimo de Algés",
+    accessibility: "Accessible",
+    description:
+      "The festival has an area reserved for people with reduced mobility and access to special toilets.",
+    website: "https://nosalive.com/acesso_especial/",
+  },
 ];
-
 async function concerts() {
   try {
     await mongoose.connect(MONGO_URI);
-
     let dbconcerts = await Places.create(concerts);
     // console.log(`Created ${dbDrones.length} drones on the DB`)
-
     mongoose.connection.close();
   } catch (error) {
     console.log(error);
   }
 }
-
 concerts();
