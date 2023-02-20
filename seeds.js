@@ -7,7 +7,7 @@ const User = require("./models/User.model");
 
 const MONGO_URI =
   process.env.MONGODB_URI ||
-  "mongodb+srv://mariana:12345678Qq@cluster0.3f2m5tq.mongodb.net/NOTYET";
+  "mongodb+srv://mariana:12345678Qq@cluster0.3f2m5tq.mongodb.net/lisbonforall";
 
 const restaurants = [
   /*  name: String,
@@ -41,7 +41,7 @@ const restaurants = [
   },
 ];
 
-async function restaurants() {
+async function createRestaurants() {
   try {
     await mongoose.connect(MONGO_URI);
 
@@ -54,7 +54,7 @@ async function restaurants() {
   }
 }
 
-restaurants();
+createRestaurants();
 
 const tours = [
   {
@@ -87,7 +87,7 @@ const tours = [
   },
 ];
 
-async function tours() {
+async function createTours() {
   try {
     await mongoose.connect(MONGO_URI);
 
@@ -100,7 +100,7 @@ async function tours() {
   }
 }
 
-tours();
+createTours();
 
 const culture = [
   {
@@ -111,7 +111,7 @@ const culture = [
     website: "https://cinemasaojorge.pt/",
   },
 ];
-async function culture() {
+async function createCulture() {
   try {
     await mongoose.connect(MONGO_URI);
     let dbculture = await Places.create(culture);
@@ -121,7 +121,7 @@ async function culture() {
     console.log(error);
   }
 }
-culture();
+createCulture();
 const concerts = [
   {
     name: "Festival Nos Alive",
@@ -132,7 +132,7 @@ const concerts = [
     website: "https://nosalive.com/acesso_especial/",
   },
 ];
-async function concerts() {
+async function createConcerts() {
   try {
     await mongoose.connect(MONGO_URI);
     let dbconcerts = await Places.create(concerts);
@@ -142,4 +142,4 @@ async function concerts() {
     console.log(error);
   }
 }
-concerts();
+createConcerts();
