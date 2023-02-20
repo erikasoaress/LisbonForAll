@@ -20,12 +20,18 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    reviews: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Places'
+    }],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
 );
+
+
 
 const User = model("User", userSchema);
 
