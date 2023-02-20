@@ -103,10 +103,10 @@ async function tours() {
 tours();
 
 const culture = [
-    { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
-    { name: "Racer 57", propellers: 4, maxSpeed: 20 },
-    { name: "Courier 3000i", propellers: 6, maxSpeed: 18 }
-]
+  { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
+  { name: "Racer 57", propellers: 4, maxSpeed: 20 },
+  { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
+];
 
 async function culture() {
   try {
@@ -124,10 +124,10 @@ async function culture() {
 culture();
 
 const concerts = [
-    { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
-    { name: "Racer 57", propellers: 4, maxSpeed: 20 },
-    { name: "Courier 3000i", propellers: 6, maxSpeed: 18 }
-]
+  { name: "Creeper XL 500", propellers: 3, maxSpeed: 12 },
+  { name: "Racer 57", propellers: 4, maxSpeed: 20 },
+  { name: "Courier 3000i", propellers: 6, maxSpeed: 18 },
+];
 
 async function concerts() {
   try {
