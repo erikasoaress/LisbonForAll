@@ -1,14 +1,10 @@
-// Iteration #1
 const mongoose = require("mongoose");
-
 const Places = require("./models/Places.model");
 const Reviews = require("./models/Reviews.model");
 const User = require("./models/User.model");
-
 const MONGO_URI =
   process.env.MONGODB_URI ||
-  "mongodb+srv://mariana:12345678Qq@cluster0.3f2m5tq.mongodb.net/NOTYET";
-
+  "mongodb+srv://mariana:12345678Qq@cluster0.3f2m5tq.mongodb.net/lisbonforall";
 const restaurants = [
   /*  name: String,
   image: String,
@@ -40,22 +36,17 @@ const restaurants = [
     description: "Easy access through a ramp",
   },
 ];
-
-async function restaurants() {
+async function createRestaurants() {
   try {
     await mongoose.connect(MONGO_URI);
-
     let dbrestaurants = await Places.create(restaurants);
     // console.log(`Created ${dbDrones.length} drones on the DB`)
-
-    mongoose.connection.close();
+    /* mongoose.connection.close(); */
   } catch (error) {
     console.log(error);
   }
 }
-
-restaurants();
-
+createRestaurants();
 const tours = [
   {
     name: "Lisbon Tour",
@@ -86,22 +77,17 @@ const tours = [
       "Adapted vehicles with easy access for seniors and wheelchair users",
   },
 ];
-
-async function tours() {
+async function createTours() {
   try {
     await mongoose.connect(MONGO_URI);
-
     let dbtours = await Places.create(tours);
-    // console.log(`Created ${dbDrones.length} drones on the DB`)
-
-    mongoose.connection.close();
+    console.log(`Created ${dbtours.length} drones on the DB`)
+    /* mongoose.connection.close(); */
   } catch (error) {
     console.log(error);
   }
 }
-
-tours();
-
+createTours();
 const culture = [
   {
     name: "Cinema São Jorge",
@@ -111,17 +97,17 @@ const culture = [
     website: "https://cinemasaojorge.pt/",
   },
 ];
-async function culture() {
+async function createCulture() {
   try {
     await mongoose.connect(MONGO_URI);
     let dbculture = await Places.create(culture);
     // console.log(`Created ${dbDrones.length} drones on the DB`)
-    mongoose.connection.close();
+    /* mongoose.connection.close(); */
   } catch (error) {
     console.log(error);
   }
 }
-culture();
+createCulture();
 const concerts = [
   {
     name: "Festival Nos Alive",
@@ -132,14 +118,14 @@ const concerts = [
     website: "https://nosalive.com/acesso_especial/",
   },
 ];
-async function concerts() {
+async function createConcerts() {
   try {
     await mongoose.connect(MONGO_URI);
     let dbconcerts = await Places.create(concerts);
     // console.log(`Created ${dbDrones.length} drones on the DB`)
-    mongoose.connection.close();
+    /* mongoose.connection.close(); */
   } catch (error) {
     console.log(error);
   }
 }
-concerts();
+createConcerts();
