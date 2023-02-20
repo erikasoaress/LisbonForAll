@@ -1,5 +1,7 @@
 const { Schema, model } = require("mongoose");
 
+
+
 const placesSchema = new Schema({
   name: String,
   image: String,
