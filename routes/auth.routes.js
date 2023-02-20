@@ -133,16 +133,28 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           }
 
           // Add the user object to the session object
-          req.session.currentUser = user.toObject();
+          // req.session.currentUser = user.toObject();
           // Remove the password field
           delete req.session.currentUser.password;
 
-          res.redirect("/");
+          res.redirect("/private");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
     .catch((err) => next(err));
 });
+
+
+router.get("/private", isLoggedIn, (req, res, next) => {
+  let user = req.session.user
+  res.render("profile", user);
+
+});
+
+router.post("/profile", isLoggedOut, (req, res, next) => {
+  const { places, name, image, location, description, website, accessibility } = req.body;
+  
+})
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
@@ -156,6 +168,5 @@ router.get("/logout", isLoggedIn, (req, res) => {
   });
 });
 
-router.get("/private", (req, res) => res.render("private"));
 
 module.exports = router;

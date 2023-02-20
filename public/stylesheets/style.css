@@ -150,7 +150,7 @@ body {
 .places {
   display: flex;
 }
-.sb3:before {
+.sb3 {
   content: "";
   width: 0px;
   height: 0px;
