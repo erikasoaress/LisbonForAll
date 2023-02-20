@@ -1,26 +1,68 @@
-<div id="form">
-  <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
+<h1 class="float-left">Join us!</h1>
 
-    <label>
-      Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+<div class="nav-login">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li><a class="nav-link" href="/">About</a>
+      </li>
 
-    <label>
-      Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
+      <li>
+        <a class="nav-link" href="/">Contact</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/auth/login">Login</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-    <label>
-      Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
+<hr class="box3">
 
-    <button type="submit">Sign Up</button>
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+
+      <form action="/auth/signup" method="post">
+
+        <div class="form-group row">
+
+          <label for="inputName" class="col-sm-3 col-form-label">Name</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputName" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group row">
+
+          <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-9 offset-sm-3">
+            <button type="submit" class="btn-info animation btn btn-primary">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+{{#if errorMessage}}
+<p class="error">{{errorMessage}}</p>
+{{/if}}
+</form>
 </div>
