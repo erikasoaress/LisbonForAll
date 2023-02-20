@@ -156,4 +156,6 @@ router.get("/logout", isLoggedIn, (req, res) => {
   });
 });
 
+router.get("/private", (req, res) => res.render("private"));
+
 module.exports = router;
