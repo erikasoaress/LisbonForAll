@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const reviewSchema = new Schema(
+const reviewsSchema = new Schema(
   {
     content: String,
     user: {
@@ -12,3 +12,7 @@ const reviewSchema = new Schema(
     timestamps: true,
   }
 );
+
+const Reviews = model("Reviews", reviewsSchema);
+
+module.exports = Reviews;
