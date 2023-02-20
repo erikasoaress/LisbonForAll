@@ -6,7 +6,9 @@ const placesSchema = new Schema({
   name: String,
   image: String,
   location: String,
+  website: String,
   accessibility: String,
+  description: String,
   review: [
     {
       type: Schema.Types.ObjectId,
