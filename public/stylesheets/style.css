@@ -1,12 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: beige;
 }
 
-a {
-  color: #00b7ff;
+.container {
+  padding-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+
+
 }
 
-h1 {
-  color: 15px;
+.float-left {
+  margin-right: 250px;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(250, 106, 2, 1.0);
+}
+
+
+
+.nav-link {
+  margin-left: 50px;
+  position: relative;
+}
+
+
+.nav-link:hover::before {
+  content: '';
+  position: absolute;
+  left: 0%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  opacity: 0.5;
+  border-radius: 50%;
+  background-color: yellow;
+
+}
+
+.cover-img {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.doverlay {
+
+  background-image: url(/images/overlay.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+}
+
+.container-fluid {
+  height: 350px;
+  width: 50vw;
+  margin-top: 60px;
+  margin-left: 250px;
+  margin-bottom: 40px;
+  border-radius: 10% 30% 50% 90%;
+  background-color: none;
+  /* position: relative; */
+
+  display: flex;
+  justify-content: center;
+}
+
+.text-signup {
+  margin-top: 0px;
+  margin-left: 90px;
+  font-size: 50px;
+  color: blueviolet;
+  position: absolute;
+
+}
+
+
+.animation {
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  --s: .25em;
+  /* control the wave*/
+  width: 200px;
+  height: 90px;
+  padding: .4em .5em;
+  border-radius: 20% 20% 20% 20%;
+  background-color: orangered;
+  color: #fff;
+  --_s: calc(var(--s)*4) 51% repeat-x;
+  --_r: calc(1.345*var(--s)) at left 50%;
+  --_g1: #000 99%, #0000 101%;
+  --_g2: #0000 99%, #000 101%;
+  --mask:
+    radial-gradient(var(--_r) top calc(var(--s)* 1.9), var(--_g1)) calc(50% - 2*var(--s) - var(--_i, 0px)) 0/var(--_s),
+    radial-gradient(var(--_r) top calc(var(--s)*-0.9), var(--_g2)) calc(50% - var(--_i, 0px)) var(--s)/var(--_s),
+    radial-gradient(var(--_r) bottom calc(var(--s)* 1.9), var(--_g1)) calc(50% - 2*var(--s) + var(--_i, 0px)) 100%/var(--_s),
+    radial-gradient(var(--_r) bottom calc(var(--s)*-0.9), var(--_g2)) calc(50% + var(--_i, 0px)) calc(100% - var(--s))/var(--_s);
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  cursor: pointer;
+  border: none;
+}
+
+.animation:hover {
+  background-color: orange;
+
+  --_i: calc(4*var(--s));
+  transition: .35s;
+}
+
+
+.animation:active {
+  background-image: linear-gradient(#0004 0 0);
+}
+
+.btn-signup {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+
+}
+
+.box2 {
+  --size: 50px;
+  --p: 25px;
+  --R: 55.9px;
+
+  height: 100px;
+
+  -webkit-mask:
+    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), blue 99%, #0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  background: orange;
+  border: none;
+  width: 100%px;
+}
+
+.places {
+  display: flex;
 }
