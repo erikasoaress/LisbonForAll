@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Places = require("../models/Places.model");
-const fileUploader = require('../config/cloudinary.config');
+const fileUploader = require("../config/cloudinary.config");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -22,71 +22,77 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
 router.get("/places", (req, res) => res.render("places"));
 
 //Post route to recive the information and create the places on the db
-router.post("/profile", async (req, res, next) => {
+router.post(
+  "/profile",
+  fileUploader.single("image"),
+  async (req, res, next) => {
+    try {
+      //extract info from req.body
+      const { name, location, website, accessibility, description, reviews } =
+        req.body;
+
+      let image;
+
+      if (req.file) {
+        image = req.file.path;
+      } else {
+        image = "https://i.ibb.co/zxRZ9FC/pub-5537449-1280.jpg";
+      }
+      //create the places in the db
+      await Places.create({
+        name,
+        image,
+        location,
+        website,
+        accessibility,
+        description,
+        reviews,
+      });
+
+      //redirect to the list again
+      res.redirect("/places");
+      //await Book.create(req.body)
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
+);
+
+router.post("/places", fileUploader.single("image"), async (req, res, next) => {
+  //const { name, location, rating, beerId } = req.body;
+
   try {
-    //extract info from req.body
-    const {
+    const currentUser = req.session.currentUser._id;
+
+    const createdRestaurant = await Restaurant.create({
       name,
       image,
       location,
-      website,
-      accessibility,
-      description,
-      reviews,
-    } = req.body;
-    //create the places in the db
-    await Places.create({
-      name,
-      image,
-      location,
-      website,
-      accessibility,
-      description,
-      reviews,
+      rating,
+    });
+    const newRestaurantId = createdRestaurant._id;
+
+    const restaurantUpdate = await Restaurant.findByIdAndUpdate(
+      newRestaurantId,
+      { $push: { beerId: beerId } }
+    );
+    const beerUpdate = await Beer.findByIdAndUpdate(beerId, {
+      $push: { restaurantId: newRestaurantId },
+    });
+    const beerUpdateUser = await User.findByIdAndUpdate(currentUser, {
+      $push: { beerId: beerId },
+    });
+    const restaurantUpdateUser = await User.findByIdAndUpdate(currentUser, {
+      $push: { restaurantId: newRestaurantId },
     });
 
-    //redirect to the list again
-    res.redirect("/places");
-    //await Book.create(req.body)
+    res.redirect(`/restaurants/details/${newRestaurantId}`);
   } catch (error) {
     console.log(error);
     next(error);
   }
 });
-
-router.post('/places', fileUploader.single('image'), async (req, res, next) => {
-    
-  //const { name, location, rating, beerId } = req.body;
-  
-
-  try {
-      const currentUser = req.session.currentUser._id;
-      let image;
-
-      if(req.file){
-
-          image = req.file.path
-
-      }  else {
-          image = 'https://i.ibb.co/zxRZ9FC/pub-5537449-1280.jpg';
-      }
-          
-          const createdRestaurant = await Restaurant.create({ name, image, location, rating });
-          const newRestaurantId = createdRestaurant._id
-          
-          const restaurantUpdate = await Restaurant.findByIdAndUpdate(newRestaurantId, { $push: { beerId: beerId }});
-          const beerUpdate = await Beer.findByIdAndUpdate(beerId, { $push: { restaurantId: newRestaurantId }});
-          const beerUpdateUser = await User.findByIdAndUpdate(currentUser, { $push: { beerId: beerId }});
-          const restaurantUpdateUser = await User.findByIdAndUpdate(currentUser, { $push: { restaurantId: newRestaurantId }});
-        
-          res.redirect(`/restaurants/details/${newRestaurantId}`);
-      
-  } catch (error) {
-      console.log(error);
-      next(error);
-  }
-});
-
 
 //Edit form
 /* router.get('/reviews/:id/edit', async (req, res, next) => {

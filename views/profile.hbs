@@ -23,7 +23,7 @@
 <h2> Want to share any discovery?</h2>
 <h3> Help us </h3>
 
-<form action="/profile" method="POST" id="placesform">
+<form action="/profile" method="POST" id="placesform" enctype="multipart/form-data">
   <label for="places">Places:</label>
   <select name="places" id="places" form="placesform">
   <option value="restaurants">Restaurants</option>
@@ -35,9 +35,11 @@
    <label for="name">Name:</label>
    <input type ="text" id="name" name="name">
 
-    <label for="image">Image:</label>
-    
-    <input type ="text" id="name" name="places">
+
+  <label for="image"><strong>Image:</strong>
+    <input type="file" name="image" value="{{places.image}}" />
+    </label>
+
 
      <label for="location">Location:</label>
      <input type ="text" id="location" name="location">
