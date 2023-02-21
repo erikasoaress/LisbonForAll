@@ -22,7 +22,7 @@ const userSchema = new Schema(
     },
     about:{
       type: String
-    }
+    },
     reviews: [{
       type: Schema.Types.ObjectId,
       ref: 'Places'
