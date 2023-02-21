@@ -1,26 +1,44 @@
-<div class="container">
+<body class="places-body">
+    <div class="container">
 
-    <h1 class="float-left">LISBON FOR ALL</h1>
+        <h1 class="float-left">LISBON FOR ALL</h1>
 
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <ul class="navbar-nav">
-            <li>
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li><a class="nav-link" href="/">About</a>
-            </li>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li><a class="nav-link" href="/">About</a>
+                </li>
 
-            <li>
-                <a class="nav-link" href="/">Contact</a>
-            </li>
-            <li>
-                <a class="nav-link" href="/auth/login">Login</a>
-            </li>
-            <li>
-                <a class="nav-link" href="/auth/logout">Logout</a>
-            </li>
-        </ul>
-    </nav>
-</div>
+                <li>
+                    <a class="nav-link" href="/">Contact</a>
+                </li>
 
+                <li>
+                    <a class="nav-link" href="/auth/logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
+    {{#each places}}
+
+    <div class="places">
+        <div class="shape-behind-card">
+            <div class="card row border-0" style="width: 15rem;">
+
+                <img class="card-img-top" src="{{imageUrl}}" alt="Card image Tour">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">{{description}}</p>
+                    <p> {{accessibility}}</p>
+
+                </div>
+
+            </div>
+           
+        </div>
+    </div>
+     {{/each}}
+</body>

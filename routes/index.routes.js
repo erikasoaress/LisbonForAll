@@ -19,7 +19,16 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
 });
 
 // Create places view
-router.get("/places", (req, res) => res.render("places"));
+router.get("/places", async (req, res) => {
+  try {
+    const places = await Places.find()
+    res.render("places", {places})
+  } catch (error) {
+    console.log(error);
+      next(error);
+  }
+
+} );
 
 //Post route to recive the information and create the places on the db
 router.post(

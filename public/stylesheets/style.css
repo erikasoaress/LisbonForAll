@@ -165,6 +165,7 @@ body {
 .card-body {
   background-color: beige;
   border: none;
+  height:25rem;
 
 }
 
@@ -264,4 +265,9 @@ body {
   display: flex;
   justify-content: center;
   padding: 30px;
+}
+
+.places-body,
+.private-body {
+  margin:40px;
 }
