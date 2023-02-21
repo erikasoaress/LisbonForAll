@@ -145,11 +145,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 });
 
 
-router.get("/private", isLoggedIn, (req, res, next) => {
-  let user = req.session.user
-  res.render("profile", user);
 
-});
 
 router.post("/profile", isLoggedOut, (req, res, next) => {
   const { places, name, image, location, description, website, accessibility } = req.body;
