@@ -59,41 +59,6 @@ router.post(
   }
 );
 
-router.post("/places", fileUploader.single("image"), async (req, res, next) => {
-  //const { name, location, rating, beerId } = req.body;
-
-  try {
-    const currentUser = req.session.currentUser._id;
-
-    const createdRestaurant = await Restaurant.create({
-      name,
-      image,
-      location,
-      rating,
-    });
-    const newRestaurantId = createdRestaurant._id;
-
-    const restaurantUpdate = await Restaurant.findByIdAndUpdate(
-      newRestaurantId,
-      { $push: { beerId: beerId } }
-    );
-    const beerUpdate = await Beer.findByIdAndUpdate(beerId, {
-      $push: { restaurantId: newRestaurantId },
-    });
-    const beerUpdateUser = await User.findByIdAndUpdate(currentUser, {
-      $push: { beerId: beerId },
-    });
-    const restaurantUpdateUser = await User.findByIdAndUpdate(currentUser, {
-      $push: { restaurantId: newRestaurantId },
-    });
-
-    res.redirect(`/restaurants/details/${newRestaurantId}`);
-  } catch (error) {
-    console.log(error);
-    next(error);
-  }
-});
-
 //Edit form
 /* router.get('/reviews/:id/edit', async (req, res, next) => {
   try {
