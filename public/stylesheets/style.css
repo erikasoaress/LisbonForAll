@@ -157,7 +157,7 @@ body {
 
 .places {
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -180,7 +180,7 @@ body {
   position: relative;
   padding: 20px;
   background-color: lightpink;
-
+  
   border-radius: 10% 10% 10% 10%;
   overflow: -moz-hidden-unscrollable;
 
@@ -254,15 +254,14 @@ body {
   justify-content: right;
 }
 
-/* .sb3 {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid #00BFB6;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #00BFB6;
-  border-bottom: 10px solid transparent;
-  left: 19px;
-  bottom: -19px;
-} */
+.btn-section-one {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.btn-info2 {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
