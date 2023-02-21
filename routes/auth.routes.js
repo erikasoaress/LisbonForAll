@@ -133,9 +133,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           }
 
           // Add the user object to the session object
-           req.session.currentUser = user.toObject();
+          req.session.currentUser = user.toObject();
           // Remove the password field
-           delete req.session.currentUser.password;
+          delete req.session.currentUser.password;
 
           res.redirect("/private");
         })
@@ -143,14 +143,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     })
     .catch((err) => next(err));
 });
-
-
-
-
-router.post("/profile", isLoggedOut, (req, res, next) => {
-  const { places, name, image, location, description, website, accessibility } = req.body;
-  
-})
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
@@ -163,6 +155,5 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
-
 
 module.exports = router;
