@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Places = require("../models/Places.model");
-const User = require('../models/User.model')
+const User = require("../models/User.model");
 const fileUploader = require("../config/cloudinary.config");
 
 /* GET home page */
@@ -22,14 +22,13 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
 // Create places view
 router.get("/places", async (req, res) => {
   try {
-    const places = await Places.find()
-    res.render("places", {places})
+    const places = await Places.find();
+    res.render("places", { places });
   } catch (error) {
     console.log(error);
-      next(error);
+    next(error);
   }
-
-} );
+});
 
 //Post route to recive the information and create the places on the db
 router.post(
@@ -69,17 +68,41 @@ router.post(
   }
 );
 
-router.get("/", async (req, res) => {
+//Get Details
+router.get("/places/edit/:id", async (req, res, next) => {
   try {
-    const users = await User.find()
-    res.render("", {users})
+    const { id } = req.params;
+    //get a single place by id
+    const placesDet = await Places.findById(id);
+    //render the view with the book
+    res.render("places-details", placesDet);
   } catch (error) {
     console.log(error);
-      next(error);
+    next(error);
   }
+});
 
-} );
+//
+router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { name, image, location, website, accessibility, description } =
+      req.body;
 
+    await Places.findByIdAndUpdate(id, {
+      name,
+      image,
+      location,
+      website,
+      accessibility,
+      description,
+    });
+    res.redirect(`/places/edit/${id}`);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
 
 //Edit form
 /* router.get('/reviews/:id/edit', async (req, res, next) => {
@@ -120,18 +143,5 @@ router.get("/", async (req, res) => {
     next(error);
   }
 });
- */
-// Get Details
-/* router.get('/books/:id', async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    //get a single book by id
-    const book = await Book.findById(id);
-    //render the view with the book
-    res.render('books/book-details', book);
-  } catch (error) {
-    console.log(error);
-    next(error);
-  }
-}); */
+*/
 module.exports = router;

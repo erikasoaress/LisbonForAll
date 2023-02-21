@@ -1,0 +1,60 @@
+<div class="container">
+
+  <h1 class="float-left">Hi {{username}}</h1>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li><a class="nav-link" href="/">About</a>
+      </li>
+
+      <li>
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/auth/login">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<h2> Want to edit a Place?</h2>
+<h3> Help us to have this information always updated to improve our exhange of information!</h3>
+
+<form action="/places-details" method="POST" id="placesform" enctype="multipart/form-data">
+  <label for="places">Places:</label>
+  <select name="places" id="places" form="placesform">
+  <option value="restaurants">Restaurants</option>
+  <option value="tours">Tours</option>
+  <option value="concerts">Concerts</option>
+  <option value="culture">Culture</option>
+  </select>
+
+   <label for="name">Place</label>
+   <input type ="text" id="name" name="name" value="{{places.name}}">
+
+  <label for="image"><strong>Image:</strong>
+    <input type="file" name="image" value="{{places.image}}" />
+    </label>
+
+
+     <label for="location">Location:</label>
+     <input type ="text" id="location" name="location" value = "{{places.location}}">
+
+     <label for="website">Website:</label>
+     <input type ="text" id="website" name="website" value = "{{places.website}}">
+
+      <label for="accessibility">Accessibility:</label>
+     <input type ="text" id="accessibility" name="accessibility" value = "{{places.accessibility}}">
+
+      <label for="description">Description:</label>
+     <input type ="text" id="description" name="description" value = "{{places.accessibility}}">
+
+<button type="submit"> Edit </button>
+  
+</form>
+
+
+    
