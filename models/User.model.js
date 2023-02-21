@@ -20,6 +20,9 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    about:{
+      type: String
+    }
     reviews: [{
       type: Schema.Types.ObjectId,
       ref: 'Places'

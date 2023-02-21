@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Places = require("../models/Places.model");
+const User = require('../models/User.model')
 const fileUploader = require("../config/cloudinary.config");
 
 /* GET home page */
@@ -67,6 +68,18 @@ router.post(
     }
   }
 );
+
+router.get("/", async (req, res) => {
+  try {
+    const users = await User.find()
+    res.render("", {users})
+  } catch (error) {
+    console.log(error);
+      next(error);
+  }
+
+} );
+
 
 //Edit form
 /* router.get('/reviews/:id/edit', async (req, res, next) => {
