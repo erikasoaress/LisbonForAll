@@ -5,10 +5,11 @@ body {
    /* background-size: cover;
   background-position: center;
   background-repeat: repeat; */
-  margin: 0px;
+  margin: 30px;
   padding: 0;
   font-family: 'Roboto Mono', monospace; 
    background-color:beige;
+  
 }
 
 #myVideo {
@@ -299,12 +300,6 @@ body {
   margin:40px;
 }
 
-/* .places-container {
-  display: flex;
-  flex-wrap: wrap;
-} */
-
-/* ------------------------------------- */
 
 .body-card-section{
   display: flex;
@@ -313,21 +308,13 @@ body {
   justify-content: space-evenly;
 
 }
-/* 
-.card-size {
-  
+
+
+.title-discovery-profile {
   display: flex;
-  flex-direction: column;
-  width: 200px;
-  border:none;
-  border-radius: 20px;
-  margin-bottom: 30px;
-  text-align: center;
-  padding-top:10px;
-  padding-bottom:8px;
-
-} */
-
+  justify-content: center;
+  margin-bottom: 50px;
+}
 
 
 

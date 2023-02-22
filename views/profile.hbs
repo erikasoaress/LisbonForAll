@@ -1,7 +1,5 @@
 <div class="container">
-
   <h1 class="float-left">Welcome, {{username}}</h1>
-
   <nav class="navbar navbar-expand-lg navbar-light">
     <ul class="navbar-nav">
       <li>
@@ -9,7 +7,6 @@
       </li>
       <li><a class="nav-link" href="/">About</a>
       </li>
-
       <li>
         <a class="nav-link" href="/profile">Profile</a>
       </li>
@@ -19,41 +16,48 @@
     </ul>
   </nav>
 </div>
-
-<h2> Want to share any discovery?</h2>
-<h3> Help us </h3>
-
-<form action="/profile" method="POST" id="placesform" enctype="multipart/form-data">
-  <label for="places">Places:</label>
-  <select name="places" id="places" form="placesform">
-  <option value="restaurants">Restaurants</option>
-  <option value="tours">Tours</option>
-  <option value="concerts">Concerts</option>
-  <option value="culture">Culture</option>
-  </select>
-
-   <label for="name">Name:</label>
-   <input type ="text" id="name" name="name">
-
-
-  <label for="image"><strong>Image:</strong>
-    <input type="file" name="image" value="{{places.image}}" />
-    </label>
-
-
-     <label for="location">Location:</label>
-     <input type ="text" id="location" name="location">
-
-     <label for="website">Website:</label>
-     <input type ="text" id="website" name="website">
-
-      <label for="accessibility">Accessibility:</label>
-     <input type ="text" id="accessibility" name="accessibility">
-
-      <label for="description">Description:</label>
-     <input type ="text" id="description" name="description">
-
-<button type="submit"> Collaborate </button>
-  
-</form>
-
+<hr class="box3">
+<h2 class="title-discovery-profile"> Want to share any discovery?</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <form action="/profile" method="POST" id="placesform" enctype="multipart/form-data">
+        <div class="form-group row">
+          <label for="image">Image: </label>
+          <div class="col-sm-9">
+            <input type="file" name="image" value="{{places.image}}" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="location">Location:</label>
+          <div class="col-sm-9">
+            <input type="text" id="location" name="location">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="website">Website:</label>
+          <div class="col-sm-9">
+            <input type="text" id="website" name="website">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="accessibility">Accessibility:</label>
+          <div class="col-sm-9">
+            <input type="text" id="accessibility" name="accessibility">
+          </div>
+        </div>
+          <div class="form-group row">
+         <label for="description">Description:</label>
+          <div class="col-sm-9">
+           <input type="text" id="description" name="description">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-9 offset-sm-3">
+            <button type="submit" class="btn-info animation btn btn-primary"><a href="/places">Collaborate!</a></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
