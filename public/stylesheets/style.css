@@ -14,6 +14,7 @@ body {
   
 }
 
+
 #myVideo {
   position: fixed;
   right: 0;
@@ -29,9 +30,10 @@ body {
   margin-left: auto;
   margin-bottom: 30px;
  
-
-
+ 
 }
+
+
 
 .container-fluid {
   
@@ -302,6 +304,7 @@ body {
 
 
 .body-card-section{
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -310,7 +313,8 @@ body {
 }
 
 
-.title-discovery-profile {
+.title-discovery-profile,
+.title-edit-place {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
@@ -331,3 +335,26 @@ body {
 
 
 
+
+.card-text span a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: red;
+}
+
+.discovery-form,
+.edit-form {
+  margin-left:250px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  width:fit-content;
+}
+
+.edit-form {
+  margin-left:200px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  width:fit-content;
+}
