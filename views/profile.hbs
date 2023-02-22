@@ -7,9 +7,7 @@
       </li>
       <li><a class="nav-link" href="/">About</a>
       </li>
-      <li>
-        <a class="nav-link" href="/profile">Profile</a>
-      </li>
+
       <li>
         <a class="nav-link" href="/auth/login">LogOut</a>
       </li>
@@ -19,9 +17,12 @@
 
 
 <hr class="box3">
+
+<div  class="discovery-form">
 <h2 class="title-discovery-profile"> Want to share any discovery?</h2>
-<div class="container">
+{{!-- <div class="container"> --}}
   <div class="row justify-content-center">
+
     <div class="col-lg-6">
       <form action="/profile" method="POST" id="placesform" enctype="multipart/form-data">
         <div class="form-group row">
@@ -77,4 +78,5 @@
       </form>
     </div>
   </div>
+{{!-- </div> --}}
 </div>

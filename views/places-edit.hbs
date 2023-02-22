@@ -57,7 +57,7 @@
 
 <hr class="box3">
 
-<h2> Want to edit a Place?</h2>
+{{!-- <h2> Want to edit a Place?</h2>
 <h3>
   Help us to have this information always updated to improve our exchange of
   information!</h3>
@@ -116,4 +116,59 @@
       </form>
     </div>
   </div>
+</div> --}}
+
+
+
+
+
+
+
+
+<div class="edit-form">
+  <h2 class="title-edit-place">Want to edit a Place?</h2>
+  <p>Help us to have this information always updated to improve our exchange of information!</p>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <form action="/places/edit/{{_id}}" method="POST" id="placesform">
+        <div class="form-group row"></div>
+
+        <div class="form-group row">
+          <label for="name">Name of the Place:</label>
+          <div class="col-sm-9">
+            <input type="text" id="name" name="name" value="{{name}}" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="website">Website:</label> 
+          <div class="col-sm-10">
+           <input type="text" id="website" name="website" value="{{website}}" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="accessibility">Accessibility:</label>
+          <div class="col-sm-9">
+            <input type="text" id="accessibility" name="accessibility" value="{{accessibility}}" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="description">Description:</label>
+          <div class="col-sm-9">
+            <input type="text" id="description" name="description" value="{{description}}" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-9 offset-sm-3">
+            <button type="submit" class="btn btn-info2 animation">Edit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+
