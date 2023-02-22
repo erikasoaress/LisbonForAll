@@ -4,6 +4,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const Places = require("../models/Places.model");
 const User = require("../models/User.model");
 const fileUploader = require("../config/cloudinary.config");
+const Review = require('../models/Places.model')
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -89,17 +90,8 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
     const { name, location, website, accessibility, description } =
       req.body;
 
-      let imageUrl;
-
-    if (req.file) {
-      imageUrl = req.file.path;
-    } else {
-      imageUrl = currentImage;
-    }
-
     await Places.findByIdAndUpdate(id, {
       name,
-      image,
       location,
       website,
       accessibility,
@@ -112,8 +104,23 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
   }
 });
 
+router.post('review/create/:id', async(req, res, next)=>{
+  try {
+    const {id} = req.params;
+    const {content, user} = req.body
+
+    const newReview = await Review.create({content, user})
+
+    await User.findByIdAndUpdate (user, {$push:{reviews: newReview_id}})
+    await Places.findByIdAndUpdate(id, {$push:{reviews: newReview_id}})
+
+    res.redirect()
+  } catch (error) {
+    
+  }
+})
 //Edit form
-/* router.get('/reviews/:id/edit', async (req, res, next) => {
+router.get('/reviews/:id/edit', async (req, res, next) => {
   try {
     const { id } = req.params;
     const reviews = await Reviews.findById(id);
@@ -122,7 +129,7 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
     console.log(error);
     next(error);
   }
-}); */
+}); 
 
 /* router.post('/reviews/:id/edit', async (req, res, next) => {
   try {

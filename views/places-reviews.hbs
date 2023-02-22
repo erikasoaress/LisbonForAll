@@ -1,0 +1,13 @@
+<form action="/review/create" method="post">
+<select name="author" id="author">
+    {{#each user}}
+
+    <option value="{{_id}}">{{username}}</option>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+
+    <button type="submit">Create Review!</button>
+
+    {{/each}}
+</select>
+
+</form>
