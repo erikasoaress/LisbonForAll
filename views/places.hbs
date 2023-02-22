@@ -1,50 +1,46 @@
 <body class="places-body">
-  <div class="container">
+    <div class="container">
 
-    <h1 class="float-left">LISBON FOR ALL</h1>
+        <h1 class="float-left">LISBON FOR ALL</h1>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <ul class="navbar-nav">
-        <li>
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li><a class="nav-link" href="/">About</a>
-        </li>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li><a class="nav-link" href="/">About</a>
+                </li>
 
-        <li>
-          <a class="nav-link" href="/auth/logout">Logout</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+                <li>
+                    <a class="nav-link" href="/auth/logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-  <section class="body-card-section">
-    {{! -> espaço total }}
+    <section class="body-card-section">
+        {{! -> espaço total }}
 
-    {{#each places}}
-      <div class="shape-behind-card">
-        {{! <div class="card-size"> }}
-        <div class="card row border-0" style="width: 15rem;">
-          <div class="card-body">
-            <img
-              class="card-img-top img"
-              src="{{image}}"
-              alt="Card image Tour"
-            />
-            <h5 class="card-h5">{{name}}</h5>
-            <p class="card-description"><b>Description:</b>{{description}}</p>
-            <p><b>Website: </b><a href="{{website}}">Click here</a></p>
-            <p><b>Accessibility level:</b>{{accessibility}}</p>
-            <a href="/places/edit/{{_id}}">Edit place!</a>
-            <a href="/reviews/create/{{_id}}">Create review!</a>
-            <a href="/reviews/list/{{_id}}">See reviews!</a>
-            {{!  <a href='/books/{{_id/delete'>Edit book</a> }}
-          </div>
-        </div>
-      </div>
-    {{/each}}
+        {{#each places}}
+        <div class="shape-behind-card">
+            {{! <div class="card-size"> }}
+                <div class="card row border-0" style="width: 15rem;">
+                    <div class="card-body">
+                        <img class="card-img-top img" src="{{image}}" alt="Card image Tour" />
+                        <h5 class="card-h5">{{name}}</h5>
+                        <p class="card-description"><b>Description:</b>{{description}}</p>
+                        <p><b>Website: </b><a href="{{website}}">Click here</a></p>
+                        <p><b>Accessibility level:</b>{{accessibility}}</p>
+                        <a href="/places/edit/{{_id}}">Edit place!</a>
+                        <a href="/reviews/create/{{_id}}">Create review!</a>
+                        <a href="/reviews/list/{{_id}}">See reviews!</a>
+                        {{! <a href='/books/{{_id/delete'>Edit book</a> }}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
 
-  </section>
+    </section>
 
 </body>
 
