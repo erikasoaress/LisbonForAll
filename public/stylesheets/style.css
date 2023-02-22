@@ -5,7 +5,9 @@ body {
    /* background-size: cover;
   background-position: center;
   background-repeat: repeat; */
-  margin: 30px;
+  background-image: url(/images/5585664.jpg);
+  background-repeat: repeat;
+  margin:20px;
   padding: 0;
   font-family: 'Roboto Mono', monospace; 
    background-color:beige;
@@ -26,8 +28,16 @@ body {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
+ 
 
 
+}
+
+.container-fluid {
+  
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .float-left {
@@ -76,19 +86,6 @@ body {
   z-index: 100;
 }
 
-.container-fluid {
-  height: 350px;
-  width: 50vw;
-  margin-top: 60px;
-  margin-left: 250px;
-  margin-bottom: 40px;
-  border-radius: 10% 30% 50% 90%;
-  background-color: none;
-  /* position: relative; */
-
-  display: flex;
-  justify-content: center;
-}
 
 .text-signup {
   margin-top: 0px;
@@ -102,14 +99,17 @@ body {
 
 .text-signup1 {
   margin-top: 0px;
-  margin-left: 90px;
-  font-size: 50px;
-  position: absolute;
+  margin-left: 20px;
+  font-size: 30px;
   color: blueviolet;
-  
+  height: 50px;
+  width:50px;
+  text-shadow: 2px 2px 4px white;
  
-
+  
 }
+
+
 
 .animation {
   margin-top: 50px;
@@ -158,8 +158,8 @@ body {
 
 .btn-signup {
   display: flex;
-  justify-content: center;
-  margin-top: 150px;
+  justify-content: left;
+  margin-top: 90px;
 
 }
 
@@ -316,7 +316,18 @@ body {
   margin-bottom: 50px;
 }
 
+.footer-img {
+  margin-top:50px;
+  margin-left: 0;
+  margin-right: 0;
+  object-fit: contain;
+}
 
+ /* .community-section {
+  background-image: url(/images/5585664.jpg);
+  background-size: contain;
+  
+}  */
 
 
 
