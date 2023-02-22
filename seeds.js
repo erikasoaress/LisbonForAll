@@ -10,10 +10,6 @@ const MONGO_URI =
   "mongodb+srv://mariana:12345678Qq@cluster0.3f2m5tq.mongodb.net/lisbonforall";
 
 const restaurants = [
-  /*  name: String,
-  image: String,
-  location: String,
-  accessibility: String, */
   {
     name: "Honorato Oriente",
     image: "../lisbonforall/public/images/honorato_oriente.jpg",
@@ -40,21 +36,6 @@ const restaurants = [
     description: "Easy access through a ramp",
   },
 ];
-
-async function createRestaurants() {
-  try {
-    await mongoose.connect(MONGO_URI);
-
-    let dbrestaurants = await Places.create(restaurants);
-    // console.log(`Created ${dbDrones.length} drones on the DB`)
-
-    mongoose.connection.close();
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-createRestaurants();
 
 const tours = [
   {
@@ -87,7 +68,48 @@ const tours = [
   },
 ];
 
-async function createTours() {
+const concerts = [
+  {
+    name: "Festival Nos Alive",
+    location: "Passeio Marítimo de Algés",
+    accessibility: "Accessible",
+    description:
+      "The festival has an area reserved for people with reduced mobility and access to special toilets.",
+    website: "https://nosalive.com/acesso_especial/",
+  },
+];
+
+const culture = [
+  {
+    name: "Cinema São Jorge",
+    location: "Av. da Liberdade 175, 1250-144 Lisboa",
+    accessibility: "Accessible",
+    description: "The cinema has an access ramp to the main entrance.",
+    website: "https://cinemasaojorge.pt/",
+  },
+];
+
+async function create() {
+  try {
+    await mongoose.connect(MONGO_URI);
+
+    let dbrestaurants = await Places.create(restaurants);
+    let dbtours = await Places.create(tours);
+    let dbculture = await Places.create(culture);
+    let dbconcerts = await Places.create(concerts);
+    console.log(
+      `Created ${dbrestaurants.length} restaurants + ${dbtours.length} tours + ${dbculture.length} culture + ${dbconcerts.length} concerts on the DB`
+    );
+
+    mongoose.connection.close();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+create();
+
+/* async function createTours() {
   try {
     await mongoose.connect(MONGO_URI);
 
@@ -102,15 +124,6 @@ async function createTours() {
 
 createTours();
 
-const culture = [
-  {
-    name: "Cinema São Jorge",
-    location: "Av. da Liberdade 175, 1250-144 Lisboa",
-    accessibility: "Accessible",
-    description: "The cinema has an access ramp to the main entrance.",
-    website: "https://cinemasaojorge.pt/",
-  },
-];
 async function createCulture() {
   try {
     await mongoose.connect(MONGO_URI);
@@ -122,16 +135,7 @@ async function createCulture() {
   }
 }
 createCulture();
-const concerts = [
-  {
-    name: "Festival Nos Alive",
-    location: "Passeio Marítimo de Algés",
-    accessibility: "Accessible",
-    description:
-      "The festival has an area reserved for people with reduced mobility and access to special toilets.",
-    website: "https://nosalive.com/acesso_especial/",
-  },
-];
+
 async function createConcerts() {
   try {
     await mongoose.connect(MONGO_URI);
@@ -143,3 +147,4 @@ async function createConcerts() {
   }
 }
 createConcerts();
+ */

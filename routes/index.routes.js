@@ -18,7 +18,8 @@ router.get("/private", isLoggedIn, (req, res, next) => {
 });
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
-  res.render("profile");
+  let user = req.session.currentUser;
+  res.render("profile", user);
 });
 
 // Create places view
@@ -94,8 +95,9 @@ router.get("/places/edit/:id", async (req, res, next) => {
     const { id } = req.params;
     //get a single place by id
     const placesDet = await Places.findById(id);
+    console.log(placesDet);
     //render the view with the book
-    res.render("places-edit", { placesDet });
+    res.render("places-edit", placesDet);
   } catch (error) {
     console.log(error);
     next(error);
@@ -108,9 +110,13 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
   console.log(id);
   const { name, location, website, accessibility, description } = req.body;
   try {
+    const place = await Places.findById(id);
+    console.log(place);
     await Places.findByIdAndUpdate(
-      id,
+      place._id,
+
       { name, location, website, accessibility, description },
+
       { new: true }
     );
 
@@ -121,7 +127,7 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.post("review/create/:id", async (req, res, next) => {
+router.post("/review/create/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const { content, user } = req.body;
@@ -138,7 +144,7 @@ router.post("review/create/:id", async (req, res, next) => {
   }
 });
 
-router.get("reviews/list", async (req, res, next) => {
+router.get("/reviews/list", async (req, res, next) => {
   try {
     let reviews = await Review.find();
     res.render("places-reviews", { reviews });
@@ -148,7 +154,7 @@ router.get("reviews/list", async (req, res, next) => {
   }
 });
 
-router.post("reviews/:id", async (req, res, next) => {
+router.post("/reviews/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const reviews = await Review.findById(id);
