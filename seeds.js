@@ -89,6 +89,7 @@ const culture = [
   },
 ];
 
+
 async function create() {
   try {
     await mongoose.connect(MONGO_URI);
@@ -97,6 +98,7 @@ async function create() {
     let dbtours = await Places.create(tours);
     let dbculture = await Places.create(culture);
     let dbconcerts = await Places.create(concerts);
+  
     console.log(
       `Created ${dbrestaurants.length} restaurants + ${dbtours.length} tours + ${dbculture.length} culture + ${dbconcerts.length} concerts on the DB`
     );
@@ -106,6 +108,8 @@ async function create() {
     console.log(error);
   }
 }
+
+
 
 create();
 

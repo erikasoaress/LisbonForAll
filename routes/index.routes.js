@@ -127,7 +127,7 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.post("/review/create/:id", async (req, res, next) => {
+router.post("/reviews/create/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const { content, user } = req.body;
@@ -137,7 +137,7 @@ router.post("/review/create/:id", async (req, res, next) => {
     await User.findByIdAndUpdate(user, { $push: { reviews: newReview._id } });
     await Places.findByIdAndUpdate(id, { $push: { reviews: newReview._id } });
 
-    res.redirect("/places-createreview");
+    res.redirect("/places");
   } catch (error) {
     console.log(error);
     next(error);
