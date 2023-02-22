@@ -1,13 +1,15 @@
-<form action="/review/create" method="post">
-<select name="author" id="author">
-    {{#each user}}
+<form action="/places-reviews" method="post">
+  <select name="author" id="author">
+    {{#each review}}
 
-    <option value="{{_id}}">{{username}}</option>
-    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+      <p>{{user}}</p>
+      <p>{{content}}</p>
 
-    <button type="submit">Create Review!</button>
+      <button type="submit">Delete this review!</button>
 
     {{/each}}
-</select>
+
+    <button type="submit">Create a new review!</button>
+  </select>
 
 </form>

@@ -4,7 +4,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const Places = require("../models/Places.model");
 const User = require("../models/User.model");
 const fileUploader = require("../config/cloudinary.config");
-const Review = require('../models/Places.model')
+const Review = require("../models/Places.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -25,6 +25,24 @@ router.get("/places", async (req, res) => {
   try {
     const places = await Places.find();
     res.render("places", { places });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.get("/places/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    //get a single book by id
+    //Single populate
+    const places = await Book.findById(id).populate("reviews");
+
+    console.log(places);
+    //render the view with the book
+    const users = await User.find();
+
+    res.render("places-reviews", { places });
   } catch (error) {
     console.log(error);
     next(error);
@@ -87,8 +105,7 @@ router.get("/places/edit/:id", async (req, res, next) => {
 router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { name, location, website, accessibility, description } =
-      req.body;
+    const { name, location, website, accessibility, description } = req.body;
 
     await Places.findByIdAndUpdate(id, {
       name,
@@ -104,23 +121,59 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.post('review/create/:id', async(req, res, next)=>{
+router.post("review/create/:id", async (req, res, next) => {
   try {
-    const {id} = req.params;
-    const {content, user} = req.body
+    const { id } = req.params;
+    const { content, user } = req.body;
 
-    const newReview = await Review.create({content, user})
+    const newReview = await Review.create({ content, user });
 
-    await User.findByIdAndUpdate (user, {$push:{reviews: newReview_id}})
-    await Places.findByIdAndUpdate(id, {$push:{reviews: newReview_id}})
+    await User.findByIdAndUpdate(user, { $push: { reviews: newReview._id } });
+    await Places.findByIdAndUpdate(id, { $push: { reviews: newReview._id } });
 
-    res.redirect()
+    res.redirect("/places-createreview");
   } catch (error) {
-    
+    console.log(error);
+    next(error);
   }
-})
+});
+
+router.get("reviews/list", async (req, res, next) => {
+  try {
+    let reviews = await Review.find();
+    res.render("places-reviews", { reviews });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.post("reviews/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const reviews = await Review.findById(id);
+
+    res.render("places-reviews", reviews);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.post("/reviews/:id/delete", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    await Review.findByIdAndDelete(id);
+    res.redirect("/places-reviews");
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
 //Edit form
-router.get('/reviews/:id/edit', async (req, res, next) => {
+/* router.get('/reviews/:id/edit', async (req, res, next) => {
   try {
     const { id } = req.params;
     const reviews = await Reviews.findById(id);
@@ -129,7 +182,7 @@ router.get('/reviews/:id/edit', async (req, res, next) => {
     console.log(error);
     next(error);
   }
-}); 
+});  */
 
 /* router.post('/reviews/:id/edit', async (req, res, next) => {
   try {
