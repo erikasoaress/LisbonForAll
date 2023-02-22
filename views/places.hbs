@@ -1,72 +1,69 @@
 <body class="places-body">
-  <div class="container">
+    <div class="container">
 
-    <h1 class="float-left">LISBON FOR ALL</h1>
+        <h1 class="float-left">LISBON FOR ALL</h1>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <ul class="navbar-nav">
-        <li>
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li><a class="nav-link" href="/">About</a>
-        </li>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li><a class="nav-link" href="/">About</a>
+                </li>
 
-        <li>
-          <a class="nav-link" href="/auth/logout">Logout</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+                <li>
+                    <a class="nav-link" href="/auth/logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-  <section class="body-card-section">
-    {{! -> espaço total }}
+    <section class="body-card-section">
+        {{! -> espaço total }}
 
-    {{#each places}}
-      <div class="shape-behind-card">
-        {{! <div class="card-size"> }}
-        <div class="card row border-0" style="width: 15rem;">
-          <div class="card-body">
-            <img
-              class="card-img-top img"
-              src="{{image}}"
-              alt="Card image Tour"
-            />
-            <h5 class="card-h5">{{name}}</h5>
-            <p class="card-description"><b>Description:</b>{{description}}</p>
-            <p><b>Website: </b><a href="{{website}}">Click here</a></p>
-            <p><b>Accessibility level:</b>{{accessibility}}</p>
-            <a href="/places/edit/{{_id}}">Edit place!</a>
-            <a href="/places-reviews/{{_id}}">See reviews!</a>
-            {{!  <a href='/books/{{_id/delete'>Edit book</a> }}
-          </div>
+        {{#each places}}
+        <div class="shape-behind-card">
+            {{! <div class="card-size"> }}
+                <div class="card row border-0" style="width: 15rem;">
+                    <div class="card-body">
+                        <img class="card-img-top img" src="{{image}}" alt="Card image Tour" />
+                        <h5 class="card-h5">{{name}}</h5>
+                        <p class="card-description"><b>Description:</b>{{description}}</p>
+                        <p><b>Website: </b><a href="{{website}}">Click here</a></p>
+                        <p><b>Accessibility level:</b>{{accessibility}}</p>
+                        <a href="/places/edit/{{_id}}">Edit place!</a>
+                        <a href="/places-reviews/{{_id}}">See reviews!</a>
+                        {{! <a href='/books/{{_id/delete'>Edit book</a> }}
+                    </div>
+                </div>
+                {{!
+            </div> }}
         </div>
-        {{! </div> }}
-      </div>
-    {{/each}}
+        {{/each}}
 
-  </section>
+    </section>
 
 </body>
 
 {{!-- {{#each places}}
 
-    {{!-- {{#each places}}
+{{!-- {{#each places}}
 
-    <div class="places-container">
-        <div class="places">
-            <div class="shape-behind-card">
-                <div class="card row border-0" style="width: 15rem;">
-                    <img class="card-img-top" src="{{image}}" alt="Card image Tour">
-                    <div class="card-body">
-                        <h5 class="card-title">{{name}}</h5>
-                        <p class="card-text"><b>Description:</b>{{description}}</p>
-                        <p><b>Website: </b><a href="{{website}}">Click here</a></p>
-                        <p><b>Accessibility level:</b>{{accessibility}}</p>
-                    </div>
+<div class="places-container">
+    <div class="places">
+        <div class="shape-behind-card">
+            <div class="card row border-0" style="width: 15rem;">
+                <img class="card-img-top" src="{{image}}" alt="Card image Tour">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text"><b>Description:</b>{{description}}</p>
+                    <p><b>Website: </b><a href="{{website}}">Click here</a></p>
+                    <p><b>Accessibility level:</b>{{accessibility}}</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    {{/each}} --}}
+{{/each}} --}}
