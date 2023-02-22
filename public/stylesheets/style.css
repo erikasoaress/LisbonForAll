@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 body {
+ /* background-image: url(/images/triangle-126266.mp4); */
+   /* background-size: cover;
+  background-position: center;
+  background-repeat: repeat; */
   margin: 0px;
   padding: 0;
-  font-family: 'Roboto Mono', monospace;
-  background-color: beige;
+  font-family: 'Roboto Mono', monospace; 
+   background-color:beige;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
 }
 
 .container {
@@ -80,7 +93,6 @@ body {
   margin-top: 0px;
   margin-left: 90px;
   font-size: 50px;
-  
   color: blueviolet;
   
  
@@ -192,12 +204,15 @@ body {
 .shape-behind-card {
   position: relative;
   padding: 20px;
+  margin-bottom: 30px;
   background-color: lightpink;
   display: flex;
   border-radius: 10% 10% 10% 10%;
-  overflow: -moz-hidden-unscrollable;
+  overflow:hidden;
 
 }
+
+
 
 .btn-info {
   display: flex;
@@ -284,10 +299,10 @@ body {
   margin:40px;
 }
 
-.places-container {
+/* .places-container {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 /* ------------------------------------- */
 
@@ -298,20 +313,20 @@ body {
   justify-content: space-evenly;
 
 }
-
+/* 
 .card-size {
-  background-color: rgb(227, 202, 138);
+  
   display: flex;
   flex-direction: column;
   width: 200px;
-  border:4px solid black;
+  border:none;
   border-radius: 20px;
   margin-bottom: 30px;
   text-align: center;
   padding-top:10px;
   padding-bottom:8px;
 
-}
+} */
 
 
 
