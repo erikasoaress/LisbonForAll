@@ -8,7 +8,8 @@ const Review = require("../models/Places.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  const logged = req.session.currentUser;
+  res.render("index", { logged });
 });
 
 router.get("/private", isLoggedIn, (req, res, next) => {
@@ -21,7 +22,7 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
 });
 
 // Create places view
-router.get("/places", async (req, res) => {
+router.get("/places", isLoggedIn, async (req, res) => {
   try {
     const places = await Places.find();
     res.render("places", { places });
@@ -94,7 +95,7 @@ router.get("/places/edit/:id", async (req, res, next) => {
     //get a single place by id
     const placesDet = await Places.findById(id);
     //render the view with the book
-    res.render("places-edit", placesDet);
+    res.render("places-edit", { placesDet });
   } catch (error) {
     console.log(error);
     next(error);
@@ -103,18 +104,17 @@ router.get("/places/edit/:id", async (req, res, next) => {
 
 //
 router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
+  const { id } = req.params;
+  console.log(id);
+  const { name, location, website, accessibility, description } = req.body;
   try {
-    const { id } = req.params;
-    const { name, location, website, accessibility, description } = req.body;
+    await Places.findByIdAndUpdate(
+      id,
+      { name, location, website, accessibility, description },
+      { new: true }
+    );
 
-    await Places.findByIdAndUpdate(id, {
-      name,
-      location,
-      website,
-      accessibility,
-      description,
-    });
-    res.redirect(`/places-edit/${id}`);
+    res.redirect(`/places`);
   } catch (error) {
     console.log(error);
     next(error);
