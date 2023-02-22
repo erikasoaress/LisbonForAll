@@ -1,4 +1,4 @@
-{{!-- <form action="/places-reviews" method="post">
+{{!-- 
   <select name="author" id="author">
     {{#each review}}
 
@@ -14,7 +14,18 @@
 
 </form> --}}
 
-{{!-- {{#each reviews}} --}}
-{{!-- <h1>{{reviews.content}}</h1>
-<h1>{{reviews.user.username}}</h1> --}}
-{{!-- {{/each}} --}}
+{{!-- {{#each reviews}}
+<h1>{{reviews.content}}</h1>
+<h1>{{reviews.user.username}}</h1>
+{{/each}}  --}}
+
+{{!-- <ul>
+  {{#each places.reviews}}
+    <li>
+      <p>{{this.content}}</p>
+      <p>By: {{this.user}}</p>
+    </li>
+  {{/each}}
+</ul> --}}
+
+{{!-- <form action="/reviews/list/{{_id}}" method="post"></form>

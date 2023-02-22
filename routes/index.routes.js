@@ -186,7 +186,7 @@ router.get("/reviews/list/:id", async (req, res, next) => {
 router.post("/reviews/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const reviews = await Review.findById(id);
+    const reviews = await Reviews.findById(id);
 
     res.render("places-reviews", reviews);
   } catch (error) {
@@ -199,7 +199,7 @@ router.post("/reviews/:id/delete", async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    await Review.findByIdAndDelete(id);
+    await Reviews.findByIdAndDelete(id);
     res.redirect("/places-reviews");
   } catch (error) {
     console.log(error);
