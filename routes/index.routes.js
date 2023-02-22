@@ -75,7 +75,7 @@ router.get("/places/edit/:id", async (req, res, next) => {
     //get a single place by id
     const placesDet = await Places.findById(id);
     //render the view with the book
-    res.render("places-details", placesDet);
+    res.render("places-edit", placesDet);
   } catch (error) {
     console.log(error);
     next(error);
@@ -86,8 +86,16 @@ router.get("/places/edit/:id", async (req, res, next) => {
 router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { name, image, location, website, accessibility, description } =
+    const { name, location, website, accessibility, description } =
       req.body;
+
+      let imageUrl;
+
+    if (req.file) {
+      imageUrl = req.file.path;
+    } else {
+      imageUrl = currentImage;
+    }
 
     await Places.findByIdAndUpdate(id, {
       name,
@@ -97,7 +105,7 @@ router.post("/places/edit/:id", isLoggedIn, async (req, res, next) => {
       accessibility,
       description,
     });
-    res.redirect(`/places/edit/${id}`);
+    res.redirect(`/places-edit/${id}`);
   } catch (error) {
     console.log(error);
     next(error);

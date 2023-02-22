@@ -16,49 +16,32 @@
           <a class="nav-link" href="/">Contact</a>
         </li>
 
-                <li>
-                    <a class="nav-link" href="/auth/logout">Logout</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        <li>
+          <a class="nav-link" href="/auth/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
-    <section class="body-card-section"> {{!--  -> espaço total --}}
+  <section class="body-card-section">
+    {{!  -> espaço total }}
 
-        {{#each places}}
+    {{#each places}}
 
-            <div class="card-size">
-                    <h5 class="card-h5">{{name}}</h5>
-                    <p class="card-description"><b>Description:</b>{{description}}</p>
-                    <p><b>Website: </b><a href="{{website}}">Click here</a></p>
-                    <p><b>Accessibility level:</b>{{accessibility}}</p>
-                </div>
+      <div class="card-size">
+        <h5 class="card-h5">{{name}}</h5>
+        <p class="card-description"><b>Description:</b>{{description}}</p>
+        <p><b>Website: </b><a href="{{website}}">Click here</a></p>
+        <p><b>Accessibility level:</b>{{accessibility}}</p>
+        <a href="/places/edit/{{_id}}">Edit book</a>
+        {{!  <a href='/books/{{_id/delete'>Edit book</a> }}
+      </div>
 
-        {{/each}}
+    {{/each}}
 
+  </section>
 
-
-
-
-
-
-
-
-
-    </section>
-
-    
-
-
-
-
-
-
-
-
-
-
-{{!-- {{#each places}}
+  {{!-- {{#each places}}
 
    <div class="places-container">
     <div class="places">
