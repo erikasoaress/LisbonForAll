@@ -33,7 +33,7 @@ router.get("/places", isLoggedIn, async (req, res) => {
   }
 });
 
-router.get("/places/:id", async (req, res, next) => {
+/* router.get("/places/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     //get a single book by id
@@ -49,7 +49,7 @@ router.get("/places/:id", async (req, res, next) => {
     console.log(error);
     next(error);
   }
-});
+}); */
 
 //Post route to recive the information and create the places on the db
 router.post(
@@ -175,8 +175,8 @@ router.post(
 router.get("/reviews/list/:id", async (req, res, next) => {
   const { id } = req.params;
   try {
-    let reviews = await Reviews.findById(id).populate("user");
-    res.render("places-reviews", { reviews });
+    let place = await Places.findById(id).populate("reviews");
+    res.render("places-reviews", place);
   } catch (error) {
     console.log(error);
     next(error);
@@ -195,12 +195,15 @@ router.post("/reviews/:id", async (req, res, next) => {
   }
 });
 
-router.post("/reviews/:id/delete", async (req, res, next) => {
+router.post("/reviews/:id/delete/:placeid", async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { id, placeid } = req.params;
+
+    await Places.findByIdAndUpdate(placeid, { $pull: { reviews: id } });
 
     await Reviews.findByIdAndDelete(id);
-    res.redirect("/places-reviews");
+
+    res.redirect(`/reviews/list/${placeid}`);
   } catch (error) {
     console.log(error);
     next(error);

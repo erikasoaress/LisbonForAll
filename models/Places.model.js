@@ -30,7 +30,7 @@ const placesSchema = new Schema({
   reviews: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Review",
+      ref: "Reviews",
     },
   ],
 });
