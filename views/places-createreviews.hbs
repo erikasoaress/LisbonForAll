@@ -1,9 +1,30 @@
+<hr class="box3">
+
 <form action="/reviews/create/{{user._id}}/{{placeId._id}}" method="post">
-  <select name="user" id="author">
 
-    <option value="{{user._id}}">{{user.username}}</option></select>
-  <textarea name="content" id="content" cols="30" rows="10"></textarea>
 
-  <button type="submit">Create Review!</button>
+ <div class="form-group row">
+          <label for="name">Name:</label>
+          <div class="col-sm-9">
+            <input type="text" id="name" name="name" value="{{user.username}}" />
+          </div>
+        </div>
 
-</form>
+ <div class="form-group row">
+          <label for="content">Review:</label> 
+          <div class="col-sm-10">
+           <textarea name="content" id="content" cols="10" rows="0"></textarea>
+          </div>
+        </div>
+
+
+  <button type="submit" class="btn btn-info animation">Create Review!</button>
+
+</form> 
+
+
+
+  {{!-- <select name="user" id="author"> --}}
+
+    {{!-- <option value="{{user._id}}">{{user.username}}</option></select>
+  <textarea name="content" id="content" cols="30" rows="10"></textarea> --}}
