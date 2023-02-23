@@ -8,17 +8,19 @@ const Reviews = require("../models/Reviews.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  const logged = req.session.currentUser;
-  res.render("index", { logged });
+  const user = req.session.currentUser;
+    res.render("index", user);
 });
 
 router.get("/private", isLoggedIn, (req, res, next) => {
   let user = req.session.currentUser;
+  console.log("private", user)
   res.render("auth/private", user);
 });
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
   let user = req.session.currentUser;
+  console.log("profile", user)
   res.render("profile", user);
 });
 
