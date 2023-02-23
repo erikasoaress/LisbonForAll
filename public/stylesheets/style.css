@@ -44,12 +44,15 @@ body {
 }
 
 .float-left {
-  font-weight: 500;
+  display: flex;
+  margin-right: 80px;
+  font-weight: 800;
+  padding-top: 20px;
   text-shadow: 2px 2px 4px rgba(250, 106, 2, 1);
 }
 
 .nav-link {
-  /*   margin-left: 50px; */
+  margin-right: 20px;
   position: relative;
 }
 nav,
@@ -57,11 +60,15 @@ nav,
 .navbar-expand-lg,
 .navbar-light {
   margin: 0px;
+ 
+  
+ 
 }
 
 .navbar {
   display: flex;
   justify-content: space-evenly;
+ 
 }
 
 .nav-link:hover::before {
@@ -253,7 +260,8 @@ nav,
 } */
 
 .community-title {
-  margin-left: 250px;
+  display:flex;
+  align-items: center;
 }
 
 .cards-margin {
@@ -278,6 +286,8 @@ nav,
   background: orange;
   border: none;
   width: 100%px;
+  
+ 
 }
 
 .box4 {
@@ -300,14 +310,14 @@ nav,
   width: 100%px;
 }
 
-.nav-login {
+/* .nav-login {
   margin-top: 30px;
   margin-bottom: 40px;
   display: flex;
 
   justify-content: space-between;
   justify-content: right;
-}
+} */
 
 .btn-section-one {
   display: flex;
@@ -321,10 +331,6 @@ nav,
   padding: 30px;
 }
 
-.places-body,
-.private-body {
-  /*   margin: 40px; */
-}
 
 .body-card-section {
   margin-top: 50px;
@@ -348,11 +354,8 @@ nav,
   object-fit: contain;
 }
 
-/* .community-section {
-  background-image: url(/images/5585664.jpg);
-  background-size: contain;
-  
-}  */
+
+
 
 .card-text span a {
   text-decoration: none;
@@ -361,11 +364,13 @@ nav,
 }
 
 .discovery-form {
-  margin-left: 325px;
+  
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 20px;
-  width: 100vh;
+  width: 100vw;
+
+  
 }
 
 .edit-form {
@@ -383,5 +388,4 @@ nav,
   color: #fff;
 }
 
-.buttons-places {
-}
+
