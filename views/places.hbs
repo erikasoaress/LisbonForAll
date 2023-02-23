@@ -31,10 +31,11 @@
                         <p class="card-description"><b>Description:</b>{{description}}</p>
                         <p><b>Website: </b><a href="{{website}}">Click here</a></p>
                         <p><b>Accessibility level:</b>{{accessibility}}</p>
-                        <a href="/places/edit/{{_id}}">Edit place!</a>
-                        <a href="/reviews/create/{{_id}}">Create review!</a>
-                        <a href="/reviews/list/{{_id}}">See reviews!</a>
-                        {{! <a href='/books/{{_id/delete'>Edit book</a> }}
+                        <div class="buttons-places">
+                        <a href="/places/edit/{{_id}}"class="btn-cards-places animation">Edit place!</a>
+                        <a href="/reviews/create/{{_id}}"class="btn-cards-places animation">Create review!</a>
+                        <a href="/reviews/list/{{_id}}"class="btn-cards-places animation">See reviews!</a>
+                        </div>
                     </div>
                 </div>
             </div>
