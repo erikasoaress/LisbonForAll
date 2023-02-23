@@ -1,63 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 body {
- /* background-image: url(/images/triangle-126266.mp4); */
-   /* background-size: cover;
+  /* background-image: url(/images/triangle-126266.mp4); */
+  /* background-size: cover;
   background-position: center;
   background-repeat: repeat; */
   background-image: url(/images/5585664.jpg);
   background-repeat: repeat;
-  margin:20px;
-  padding: 0;
-  font-family: 'Roboto Mono', monospace; 
-   background-color:beige;
-  
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto Mono", monospace;
+  background-color: beige;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
-
-#myVideo {
+/* #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
   z-index: -1;
-}
+} */
 
 .container {
   padding-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 30px;
- 
- 
+  padding-bottom: 20px;
+  /*   margin-right: auto;
+  margin-left: auto; */
+  /*   margin-bottom: 30px;
+  margin-right: 0px; */
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-
-
 .container-fluid {
-  
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .float-left {
-  margin-right: 250px;
   font-weight: 500;
-  text-shadow: 2px 2px 4px rgba(250, 106, 2, 1.0);
+  text-shadow: 2px 2px 4px rgba(250, 106, 2, 1);
 }
-
-
 
 .nav-link {
-  margin-left: 50px;
+  /*   margin-left: 50px; */
   position: relative;
 }
+nav,
+.navbar,
+.navbar-expand-lg,
+.navbar-light {
+  margin: 0px;
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .nav-link:hover::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0%;
   transform: translateX(-50%);
@@ -68,7 +76,6 @@ body {
   opacity: 0.5;
   border-radius: 50%;
   background-color: yellow;
-
 }
 
 .cover-img {
@@ -78,7 +85,6 @@ body {
 }
 
 .doverlay {
-
   background-image: url(/images/overlay.png);
   position: absolute;
   width: 100%;
@@ -87,16 +93,32 @@ body {
   top: 0px;
   z-index: 100;
 }
+/* .cover-img {
+  width: 98%;
+}
+.img-fluid {
+  width: 98%;
+} */
+.private-body {
+  width: 100%;
+}
 
+.last-div-pls {
+  margin-left: 100px;
+}
+
+.container-index {
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
 
 .text-signup {
   margin-top: 0px;
   margin-left: 90px;
   font-size: 50px;
   color: blueviolet;
-  
- 
-
 }
 
 .text-signup1 {
@@ -105,35 +127,34 @@ body {
   font-size: 30px;
   color: blueviolet;
   height: 50px;
-  width:50px;
+  width: 50px;
   text-shadow: 2px 2px 4px white;
- 
-  
 }
-
-
 
 .animation {
   margin-top: 50px;
   font-size: 20px;
   font-weight: bold;
-  --s: .25em;
+  --s: 0.25em;
   /* control the wave*/
   width: 200px;
   height: 90px;
-  padding: .4em .5em;
+  padding: 0.4em 0.5em;
   border-radius: 20% 20% 20% 20%;
   background-color: orangered;
   color: #fff;
-  --_s: calc(var(--s)*4) 51% repeat-x;
-  --_r: calc(1.345*var(--s)) at left 50%;
+  --_s: calc(var(--s) * 4) 51% repeat-x;
+  --_r: calc(1.345 * var(--s)) at left 50%;
   --_g1: #000 99%, #0000 101%;
   --_g2: #0000 99%, #000 101%;
-  --mask:
-    radial-gradient(var(--_r) top calc(var(--s)* 1.9), var(--_g1)) calc(50% - 2*var(--s) - var(--_i, 0px)) 0/var(--_s),
-    radial-gradient(var(--_r) top calc(var(--s)*-0.9), var(--_g2)) calc(50% - var(--_i, 0px)) var(--s)/var(--_s),
-    radial-gradient(var(--_r) bottom calc(var(--s)* 1.9), var(--_g1)) calc(50% - 2*var(--s) + var(--_i, 0px)) 100%/var(--_s),
-    radial-gradient(var(--_r) bottom calc(var(--s)*-0.9), var(--_g2)) calc(50% + var(--_i, 0px)) calc(100% - var(--s))/var(--_s);
+  --mask: radial-gradient(var(--_r) top calc(var(--s) * 1.9), var(--_g1))
+      calc(50% - 2 * var(--s) - var(--_i, 0px)) 0 / var(--_s),
+    radial-gradient(var(--_r) top calc(var(--s) * -0.9), var(--_g2))
+      calc(50% - var(--_i, 0px)) var(--s) / var(--_s),
+    radial-gradient(var(--_r) bottom calc(var(--s) * 1.9), var(--_g1))
+      calc(50% - 2 * var(--s) + var(--_i, 0px)) 100% / var(--_s),
+    radial-gradient(var(--_r) bottom calc(var(--s) * -0.9), var(--_g2))
+      calc(50% + var(--_i, 0px)) calc(100% - var(--s)) / var(--_s);
   -webkit-mask: var(--mask);
   mask: var(--mask);
   cursor: pointer;
@@ -149,10 +170,9 @@ body {
 .animation:hover {
   background-color: orange;
 
-  --_i: calc(4*var(--s));
-  transition: .35s;
+  --_i: calc(4 * var(--s));
+  transition: 0.35s;
 }
-
 
 .animation:active {
   background-image: linear-gradient(#0004 0 0);
@@ -162,7 +182,6 @@ body {
   display: flex;
   justify-content: left;
   margin-top: 90px;
-
 }
 
 .box2 {
@@ -172,9 +191,14 @@ body {
 
   height: 100px;
 
-  -webkit-mask:
-    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), blue 99%, #0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
-    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  -webkit-mask: radial-gradient(
+        var(--R) at 50% calc(100% - (var(--size) + var(--p))),
+        blue 99%,
+        #0000 101%
+      )
+      calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%)
+      50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
   background: orange;
   border: none;
   width: 100%;
@@ -184,25 +208,18 @@ body {
   margin-top: 100px;
   margin-bottom: 50px;
   display: flex;
-  justify-content: space-between;
-  
-
+  justify-content: space-evenly;
 }
 
 .card-body {
-  background-color:beige;
+  background-color: beige;
   border: none;
- 
-
 }
-
 
 .card-img-top {
   height: 200px;
   object-fit: cover;
 }
-
-
 
 .shape-behind-card {
   position: relative;
@@ -211,11 +228,8 @@ body {
   background-color: lightpink;
   display: flex;
   border-radius: 10% 10% 10% 10%;
-  overflow:hidden;
-
+  overflow: hidden;
 }
-
-
 
 .btn-info {
   display: flex;
@@ -253,9 +267,14 @@ body {
 
   height: 90px;
 
-  -webkit-mask:
-    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), blue 99%, #0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
-    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  -webkit-mask: radial-gradient(
+        var(--R) at 50% calc(100% - (var(--size) + var(--p))),
+        blue 99%,
+        #0000 101%
+      )
+      calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%)
+      50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
   background: orange;
   border: none;
   width: 100%px;
@@ -268,9 +287,14 @@ body {
 
   height: 60px;
 
-  -webkit-mask:
-    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), blue 99%, #0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
-    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  -webkit-mask: radial-gradient(
+        var(--R) at 50% calc(100% - (var(--size) + var(--p))),
+        blue 99%,
+        #0000 101%
+      )
+      calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%)
+      50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
   background: orange;
   border: none;
   width: 100%px;
@@ -280,7 +304,7 @@ body {
   margin-top: 30px;
   margin-bottom: 40px;
   display: flex;
-  
+
   justify-content: space-between;
   justify-content: right;
 }
@@ -299,19 +323,16 @@ body {
 
 .places-body,
 .private-body {
-  margin:40px;
+  /*   margin: 40px; */
 }
 
-
-.body-card-section{
+.body-card-section {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
 }
-
 
 .title-discovery-profile,
 .title-edit-place {
@@ -321,50 +342,46 @@ body {
 }
 
 .footer-img {
-  margin-top:50px;
+  margin-top: 50px;
   margin-left: 0;
   margin-right: 0;
   object-fit: contain;
 }
 
- /* .community-section {
+/* .community-section {
   background-image: url(/images/5585664.jpg);
   background-size: contain;
   
 }  */
 
-
-
-
-.card-text span a{
+.card-text span a {
   text-decoration: none;
   font-weight: bolder;
   color: red;
 }
 
 .discovery-form {
-  margin-left:325px;
+  margin-left: 325px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 20px;
-  width:100vh;
+  width: 100vh;
 }
 
 .edit-form {
-  margin-left:200px;
+  margin-left: 200px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 20px;
-  width:fit-content;
+  width: fit-content;
 }
 
 .btn-cards-places {
-text-decoration:none;
-font-size: 14px;
-padding:10px;
-color:#fff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px;
+  color: #fff;
 }
 
 .buttons-places {
-  
 }
