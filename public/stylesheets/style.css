@@ -15,14 +15,6 @@ body {
 }
 
 
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  z-index: -1;
-}
 
 .container {
   padding-top: 20px;
@@ -30,9 +22,8 @@ body {
   margin-left: auto;
   margin-bottom: 30px;
  
- 
+  
 }
-
 
 
 .container-fluid {
@@ -140,6 +131,7 @@ body {
   border: none;
 }
 
+
 .animation a {
   text-decoration: none;
   color: white;
@@ -228,15 +220,6 @@ body {
   height: 40px;
 }
 
-/* .thick-hr {
-
-  border: 0;
-  height: 3px;
-  background-color: orange;
-  margin: 20px 0;
-
-
-} */
 
 .community-title {
   margin-left: 250px;
@@ -327,14 +310,6 @@ body {
   object-fit: contain;
 }
 
- /* .community-section {
-  background-image: url(/images/5585664.jpg);
-  background-size: contain;
-  
-}  */
-
-
-
 
 .card-text span a{
   text-decoration: none;
@@ -358,13 +333,18 @@ body {
   width:fit-content;
 }
 
-.btn-cards-places {
-text-decoration:none;
-font-size: 14px;
-padding:10px;
-color:#fff;
+
+
+.card-body a {
+  text-decoration: none;
+  color:#fff;
+  display: flex;
+  font-size:16px;
+  
 }
 
-.buttons-places {
-  
+.animation2 {
+  margin:0;
+  height:50px;
+  width: 200px;
 }

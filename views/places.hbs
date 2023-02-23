@@ -29,13 +29,13 @@
                         <img class="card-img-top img" src="{{image}}" alt="Card image Tour" />
                         <h5 class="card-h5">{{name}}</h5>
                         <p class="card-description"><b>Description:</b>{{description}}</p>
-                        <p><b>Website: </b><a href="{{website}}">Click here</a></p>
+                        <p><b>Website: </b><a href="{{website}}" class="click-here-button">Click here</a></p>
                         <p><b>Accessibility level:</b>{{accessibility}}</p>
-                        <div class="buttons-places">
-                        <a href="/places/edit/{{_id}}"class="btn-cards-places animation">Edit place!</a>
-                        <a href="/reviews/create/{{_id}}"class="btn-cards-places animation">Create review!</a>
-                        <a href="/reviews/list/{{_id}}"class="btn-cards-places animation">See reviews!</a>
-                        </div>
+                        
+                        <a href="/places/edit/{{_id}}"class="btn-cards-places animation animation2">Edit place!</a>
+                        <a href="/reviews/create/{{_id}}"class="btn-cards-places animation animation2">Create review!</a>
+                        <a href="/reviews/list/{{_id}}"class="btn-cards-places animation animation2">See reviews!</a>
+                        
                     </div>
                 </div>
             </div>
@@ -45,25 +45,3 @@
 
 </body>
 
-{{!-- {{#each places}}
-
-{{!-- {{#each places}}
-
-<div class="places-container">
-    <div class="places">
-        <div class="shape-behind-card">
-            <div class="card row border-0" style="width: 15rem;">
-                <img class="card-img-top" src="{{image}}" alt="Card image Tour">
-                <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text"><b>Description:</b>{{description}}</p>
-                    <p><b>Website: </b><a href="{{website}}">Click here</a></p>
-                    <p><b>Accessibility level:</b>{{accessibility}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-{{/each}} --}}
