@@ -27,8 +27,9 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
 // Create places view
 router.get("/places", isLoggedIn, async (req, res) => {
   try {
+    let user = req.session.currentUser;
     const places = await Places.find();
-    res.render("places", { places });
+    res.render("places",{ places } );
   } catch (error) {
     console.log(error);
     next(error);

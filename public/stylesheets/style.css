@@ -1,10 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 body {
-  /* background-image: url(/images/triangle-126266.mp4); */
-  /* background-size: cover;
-  background-position: center;
-  background-repeat: repeat; */
+
   background-image: url(/images/5585664.jpg);
   background-repeat: repeat;
   margin: 0px;
@@ -16,24 +13,15 @@ body {
   overflow-x: hidden;
 }
 
-/* #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-} */
+
 
 .container {
   padding-top: 20px;
   padding-bottom: 20px;
-  /*   margin-right: auto;
-  margin-left: auto; */
-  /*   margin-bottom: 30px;
-  margin-right: 0px; */
+
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
@@ -46,29 +34,31 @@ body {
 .float-left {
   display: flex;
   margin-right: 80px;
-  font-weight: 800;
+  
   padding-top: 20px;
-  text-shadow: 2px 2px 4px rgba(250, 106, 2, 1);
+  text-shadow: 2px 2px 2px rgba(250, 106, 2, 1);
+  
 }
 
 .nav-link {
   margin-right: 20px;
   position: relative;
 }
+
 nav,
 .navbar,
 .navbar-expand-lg,
 .navbar-light {
   margin: 0px;
- 
-  
- 
+
+
+
 }
 
 .navbar {
   display: flex;
   justify-content: space-evenly;
- 
+
 }
 
 .nav-link:hover::before {
@@ -100,12 +90,7 @@ nav,
   top: 0px;
   z-index: 100;
 }
-/* .cover-img {
-  width: 98%;
-}
-.img-fluid {
-  width: 98%;
-} */
+
 .private-body {
   width: 100%;
 }
@@ -122,8 +107,10 @@ nav,
 }
 
 .text-signup {
-  margin-top: 0px;
-  margin-left: 90px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+  
   font-size: 50px;
   color: blueviolet;
 }
@@ -139,6 +126,7 @@ nav,
 }
 
 .animation {
+  text-decoration: none;
   margin-top: 50px;
   font-size: 20px;
   font-weight: bold;
@@ -154,14 +142,10 @@ nav,
   --_r: calc(1.345 * var(--s)) at left 50%;
   --_g1: #000 99%, #0000 101%;
   --_g2: #0000 99%, #000 101%;
-  --mask: radial-gradient(var(--_r) top calc(var(--s) * 1.9), var(--_g1))
-      calc(50% - 2 * var(--s) - var(--_i, 0px)) 0 / var(--_s),
-    radial-gradient(var(--_r) top calc(var(--s) * -0.9), var(--_g2))
-      calc(50% - var(--_i, 0px)) var(--s) / var(--_s),
-    radial-gradient(var(--_r) bottom calc(var(--s) * 1.9), var(--_g1))
-      calc(50% - 2 * var(--s) + var(--_i, 0px)) 100% / var(--_s),
-    radial-gradient(var(--_r) bottom calc(var(--s) * -0.9), var(--_g2))
-      calc(50% + var(--_i, 0px)) calc(100% - var(--s)) / var(--_s);
+  --mask: radial-gradient(var(--_r) top calc(var(--s) * 1.9), var(--_g1)) calc(50% - 2 * var(--s) - var(--_i, 0px)) 0 / var(--_s),
+    radial-gradient(var(--_r) top calc(var(--s) * -0.9), var(--_g2)) calc(50% - var(--_i, 0px)) var(--s) / var(--_s),
+    radial-gradient(var(--_r) bottom calc(var(--s) * 1.9), var(--_g1)) calc(50% - 2 * var(--s) + var(--_i, 0px)) 100% / var(--_s),
+    radial-gradient(var(--_r) bottom calc(var(--s) * -0.9), var(--_g2)) calc(50% + var(--_i, 0px)) calc(100% - var(--s)) / var(--_s);
   -webkit-mask: var(--mask);
   mask: var(--mask);
   cursor: pointer;
@@ -198,30 +182,53 @@ nav,
 
   height: 100px;
 
-  -webkit-mask: radial-gradient(
-        var(--R) at 50% calc(100% - (var(--size) + var(--p))),
-        blue 99%,
-        #0000 101%
-      )
-      calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
-    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%)
-      50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
+  -webkit-mask: radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),
+      blue 99%,
+      #0000 101%) calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
   background: orange;
   border: none;
   width: 100%;
 }
 
 .places {
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 50px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .card-body {
+  
+  background-color: beige;
+  border: none;
+ 
+  
+}
+
+.card-places {
+  height:400px;
   background-color: beige;
   border: none;
 }
+.card-places {
+  overflow: scroll;
+}
+
+.card-places::-webkit-scrollbar {
+  width: 10px;
+}
+
+.card-places::-webkit-scrollbar-track {
+  background-color:orange;
+}
+
+.card-places::-webkit-scrollbar-thumb {
+  background-color: yellow;
+}
+
+
 
 .card-img-top {
   height: 200px;
@@ -230,8 +237,9 @@ nav,
 
 .shape-behind-card {
   position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.0);
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   background-color: lightpink;
   display: flex;
   border-radius: 10% 10% 10% 10%;
@@ -247,22 +255,9 @@ nav,
   color: white;
   width: 150px;
   height: 40px;
+ 
 }
 
-/* .thick-hr {
-
-  border: 0;
-  height: 3px;
-  background-color: orange;
-  margin: 20px 0;
-
-
-} */
-
-.community-title {
-  display:flex;
-  align-items: center;
-}
 
 .cards-margin {
   margin: 40px;
@@ -275,19 +270,15 @@ nav,
 
   height: 90px;
 
-  -webkit-mask: radial-gradient(
-        var(--R) at 50% calc(100% - (var(--size) + var(--p))),
-        blue 99%,
-        #0000 101%
-      )
-      calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
-    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%)
-      50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
+  -webkit-mask: radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),
+      blue 99%,
+      #0000 101%) calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
   background: orange;
   border: none;
   width: 100%px;
-  
- 
+
+
 }
 
 .box4 {
@@ -297,31 +288,19 @@ nav,
 
   height: 60px;
 
-  -webkit-mask: radial-gradient(
-        var(--R) at 50% calc(100% - (var(--size) + var(--p))),
-        blue 99%,
-        #0000 101%
-      )
-      calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
-    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%)
-      50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
+  -webkit-mask: radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),
+      blue 99%,
+      #0000 101%) calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
   background: orange;
   border: none;
   width: 100%px;
 }
 
-/* .nav-login {
-  margin-top: 30px;
-  margin-bottom: 40px;
-  display: flex;
-
-  justify-content: space-between;
-  justify-content: right;
-} */
 
 .btn-section-one {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: 70px;
 }
 
@@ -333,9 +312,9 @@ nav,
 
 
 .body-card-section {
-  margin-top: 50px;
+  margin-top: 150px;
+
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -345,7 +324,30 @@ nav,
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  
+  color:#000;
+  
 }
+
+.title-discovery-profile {
+  animation-name: move;
+  animation-duration: 3s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 .footer-img {
   margin-top: 50px;
@@ -354,6 +356,9 @@ nav,
   object-fit: contain;
 }
 
+footer {
+ margin-top: 150px;
+}
 
 
 
@@ -365,12 +370,14 @@ nav,
 
 .discovery-form {
   margin-bottom: 100px;
+  margin-left: 300px;
   background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.0);
   border-radius: 10px;
-  padding: 20px;
-  width: 100vw;
+  padding: 40px;
+  width: 700px;
 
-  
+
 }
 
 .edit-form {
@@ -381,11 +388,50 @@ nav,
   width: fit-content;
 }
 
+
+
+
+
+.delete-btn {
+  width: 120px;
+  height: 50px;
+ font-size: 14px;
+ margin-left: 55px;
+}
+
+
+.discovery-form h1 {
+  margin-bottom: 50px;
+}
+
+.star {
+  width:60px;
+  height: 60px;
+  margin-left:80px;
+}
+
+
 .btn-cards-places {
+  justify-content: center;
   text-decoration: none;
-  font-size: 14px;
-  padding: 10px;
-  color: #fff;
+  
+  color: white;
+  display: flex;
+  font-size:16px;
+  
+}
+
+
+.animation2 {
+  margin:0;
+  height:50px;
+  width: 150px;
+}
+
+.click-here-button  {
+  text-decoration: none;
+  color: blueviolet;
+  font-weight: bolder;
 }
 
 

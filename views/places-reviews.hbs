@@ -1,39 +1,43 @@
-
+{{!--
 {{#each reviews}}
 <h1>By: {{user.username}}</h1>
 <p>{{content}}</p>
 <form action="/reviews/{{_id}}/delete/{{../_id}}" method="post">
-<button type="submit">Delete</button>
+  <button type="submit">Delete</button>
 </form>
 
-{{/each}}
+{{/each}} --}}
 
-{{!-- 
-  <select name="author" id="author">
-    {{#each review}}
 
-      <p>{{user}}</p>
-      <p>{{content}}</p>
 
-      <button type="submit">Delete this review!</button>
 
-    {{/each}}
 
-    <button type="submit">Create a new review!</button>
-  </select>
+<body class="places-body">
+  <hr class="box3">
+  <section class="body-card-section">
+    {{! -> espaço total }}
 
-</form> --}}
+    {{#each reviews}}
+    <div class="shape-behind-card">
+      {{! <div class="card-size"> }}
+        <div class="card row border-0" style="width: 17rem;">
+          <div class="card-body card-places">
 
-{{!-- {{#each reviews}}
-<h1>{{reviews.content}}</h1>
-<h1>{{reviews.user.username}}</h1>
-{{/each}}  --}}
+            <img class="card-img-top img star" src="/images/25533-removebg-preview.png" alt="star" />
+            <p class="card-text"> "{{content}}"</p>
 
-{{!-- <ul>
-  {{#each places.reviews}}
-    <li>
-      <p>{{this.content}}</p>
-      <p>By: {{this.user}}</p>
-    </li>
-  {{/each}}
-</ul> --}}
+           <form action="/reviews/{{_id}}/delete/{{../_id}}" method="post">
+              <button type="submit" class="animation delete-btn">Delete</button>
+            </form>
+
+
+          </div>
+        </div>
+         
+      </div>
+      
+      {{/each}}
+
+  </section>
+
+</body>
