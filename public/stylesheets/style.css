@@ -120,9 +120,10 @@ nav,
   margin-left: 20px;
   font-size: 30px;
   color: blueviolet;
+  font-weight: bolder;
   height: 50px;
   width: 50px;
-  text-shadow: 2px 2px 4px white;
+  
 }
 
 .animation {
