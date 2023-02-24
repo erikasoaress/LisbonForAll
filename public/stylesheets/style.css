@@ -77,8 +77,10 @@ nav,
 
 .cover-img {
   position: relative;
+ 
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: 2px 2px 10px rgb(0, 0, 0, 1.0);
 }
 
 .doverlay {
@@ -182,7 +184,7 @@ nav,
   --R: 55.9px;
 
   height: 100px;
-
+ 
   -webkit-mask: radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),
       blue 99%,
       #0000 101%) calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%,
